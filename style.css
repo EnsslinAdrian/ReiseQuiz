@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background: linear-gradient(90deg, rgba(23, 110, 166, 1) 0%, rgba(9, 110, 139, 1) 30%, rgba(0, 212, 255, 1) 100%);
+}
+
+header {
+    box-shadow: 0px 5px 10px 1px rgba(2, 216, 245, 0.57);
+    background: linear-gradient(90deg, rgb(28, 83, 117) 0%, rgb(31, 155, 180) 100%);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+}
+
+.display-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    width: 70vw;
+    height: 60vh;
+    box-shadow: 0 0px 20px 10px rgba(2, 216, 245, 0.57);
+    margin-top: 100px;
+    border-radius: 50px;
+    display: flex;
+    overflow: hidden;
+}
+
+.menu-section {
+    box-shadow: 5px 0px 10px 0px rgba(139, 139, 139, 0.57);
+    width: 20%;
+    height: 100%;
+    background: linear-gradient(90deg, rgb(45, 107, 146) 0%, rgb(24, 93, 107) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.menu-section a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    height: 40px;
+    transition: all 225ms ease-in-out;
+}
+
+.menu-section a:hover {
+    background-color: rgba(14, 143, 143, 0.76);
+    letter-spacing: 5px;
+}
+
+.close-menu {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+h1 {
+    color: white;
+    font-size: 40px;
+    letter-spacing: 5px;
+}
+

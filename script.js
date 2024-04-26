@@ -91,6 +91,9 @@ let questions = [
 
 ];
 
+function initQuiz() {
+
+}
 
 
 

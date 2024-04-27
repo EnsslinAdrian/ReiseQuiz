@@ -6,6 +6,14 @@
     align-items: center;
 }
 
+.quiz-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .question-healdine-section {
     width: 80%;
     display: flex;
@@ -37,10 +45,9 @@
     border-radius: 80px;
     cursor: pointer;
     box-shadow: 0 0px 20px 10px rgba(2, 216, 245, 0.57);
-}
-
-.question:hover {
-    background: linear-gradient(90deg, rgb(45, 107, 146) 0%, rgb(24, 93, 107) 100%);
+    text-align: center;
+    font-weight: 800;
+    font-size: 20px;
 }
 
 .question-navigation {
@@ -68,3 +75,19 @@
     background-color: rgba(240, 248, 255, 0.521);
     box-shadow: 0 0 5px 5px rgba(38, 58, 95, 0.493);
 }
+
+.background-color-wrong {
+    background: linear-gradient(90deg, rgb(253, 2, 2) 0%, rgb(61, 5, 5) 100%);
+    color: white;
+}
+
+.background-color-correct {
+    background: linear-gradient(90deg, rgb(31, 253, 2) 0%, rgb(4, 82, 17) 100%);
+    color: white;
+}
+
+.d-none {
+    display: none;
+    }
+
+    

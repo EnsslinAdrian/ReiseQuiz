@@ -7,9 +7,10 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="question.css">
+    <link rel="stylesheet" href="endscreen.css">
 
     <script src="script.js"></script>
-    
+
 </head>
 <body onload="initQuiz()">
 
@@ -32,21 +33,36 @@
 
 <section class="quiz-section">
 
-  <div class="question-healdine-section">
-    <h2>Quiz</h2>
+<div class="quiz-container" id="quizContainer">
+
+  <div class="question-healdine-section" id="question-healdine-section">
+    <h2 id="showQuestion">Quiz</h2>
   </div> 
 
-  <div class="question-section">
-    <div class="question">Frage1</div>
-    <div class="question">Frage2</div>
-    <div class="question">Frage3</div>
-    <div class="question">Frage4</div>
+  <div class="question-section" id="questionSection">
+  <div class="question" id="showAnswer_1" onclick="answer('showAnswer_1')">Frage1</div>
+<div class="question" id="showAnswer_2" onclick="answer('showAnswer_2')">Frage2</div>
+<div class="question" id="showAnswer_3" onclick="answer('showAnswer_3')">Frage3</div>
+<div class="question" id="showAnswer_4" onclick="answer('showAnswer_4')">Frage4</div>
+
   </div>
 
-<div class="question-navigation">
-<p>Frage <b>XXX</b> von <b>XXX</b></p>
-<button>Nächste Frage</button>
+<div class="question-navigation" id="questionNavigation">
+<p>Frage <b id="positionQuestion">XXX</b> von <b id="questionLength">XXX</b></p>
+<button id="nextQuestionButton" onclick="nextQuestion()" disabled>Nächste Frage</button>
 </div>
+
+</div>
+
+
+<div class="endScreen d-none" id="endScreen">
+  <div>
+    <h3>Du hast es geschaff Adrian Perfekt</h3>
+    <p>Du hast <b id="endPointsQuestion">XXX</b> Fragen von <b id="endQuestionLenght">XXX</b> richtig beantwortet</p>
+    <p id="showEndScreenText">Sehr gut das hast fast alle fragen richtig du bist Bombe</p>
+  </div>
+  <img src="./img/pokal.png" alt="">
+  </div>
 
 </section>
 

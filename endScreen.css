@@ -1,0 +1,19 @@
+.endScreen img{
+width: 400px;
+}
+
+.endScreen {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100%;
+}
+
+.d-none {
+display: none;
+}
+
+h3 {
+    font-size: 40px;
+    margin-block-start: 0;
+    }

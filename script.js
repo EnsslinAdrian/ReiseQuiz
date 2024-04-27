@@ -91,7 +91,74 @@ let questions = [
 
 ];
 
+let currentQuestion = 0;
+let correctAnswersCurrent = 0;
+
 function initQuiz() {
+  document.getElementById('questionLength').innerHTML = questions.length;
+  document.getElementById('positionQuestion').innerHTML = currentQuestion + 1;
+  renderQuestion();
+}
+
+function renderQuestion() {
+  let question = questions[currentQuestion];
+
+  document.getElementById('showQuestion').innerHTML = question['question'];
+  document.getElementById('showAnswer_1').innerHTML = question['answer_1'];
+  document.getElementById('showAnswer_2').innerHTML = question['answer_2'];
+  document.getElementById('showAnswer_3').innerHTML = question['answer_3'];
+  document.getElementById('showAnswer_4').innerHTML = question['answer_4'];
+}
+
+function answer(selction) {
+  let question = questions[currentQuestion];
+  let answer = selction.slice(-1);
+
+  let idOfRightAnswer = `showAnswer_${question['right_answer']}`;
+
+  if (question['right_answer'] == answer) {
+    document.getElementById(selction).classList.add('background-color-correct');
+    correctAnswersCurrent++;
+  } else {
+    document.getElementById(selction).classList.add('background-color-wrong');
+    document.getElementById(idOfRightAnswer).classList.add('background-color-correct');
+  }
+  document.getElementById('nextQuestionButton').disabled = false;
+}
+
+function nextQuestion() {
+  if (currentQuestion +1 >= questions.length) {
+    endScreen();
+  } else {
+  currentQuestion++
+  initQuiz();
+  resetQuestionColor();
+}
+}
+
+function resetQuestionColor() {
+  for (let i = 1; i <= 4; i++) {
+    document.getElementById(`showAnswer_${i}`).classList.remove('background-color-correct');
+    document.getElementById(`showAnswer_${i}`).classList.remove('background-color-wrong');
+  }
+}
+
+function endScreen() {
+document.getElementById('quizContainer').classList.add('d-none');
+document.getElementById('endScreen').classList.remove('d-none');
+
+document.getElementById('endQuestionLenght').innerHTML = questions.length;
+document.getElementById('endPointsQuestion').innerHTML = correctAnswersCurrent;
+
+if (correctAnswersCurrent < 5) {
+  document.getElementById('showEndScreenText').innerHTML = 'Leider hast du nicht viele Fragen richtig beantwortet übe weiter um besser zu werden';
+} else if (correctAnswersCurrent >= 7 && correctAnswersCurrent < 10) {
+  document.getElementById('showEndScreenText').innerHTML = 'Sehr gut das hast fast alle Fragen richtig beantwortet du bist Bombe und kannst sehr Stolz auf dich sein';
+} else if (correctAnswersCurrent >= 5 && correctAnswersCurrent < 7) {
+  document.getElementById('showEndScreenText').innerHTML = 'Du hast die hälfte der fragen richtig beatwortet du kannst stolz auf dich sein aber da geht noch mehr';
+} else if (correctAnswersCurrent === 10) {
+  document.getElementById('showEndScreenText').innerHTML = 'Herzlichen Glückwunsch du hast alle Fragen richtig beantwortet du bist ein Naturtalent weiter so';
+}
 
 }
 

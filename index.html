@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="question.css">
     <link rel="stylesheet" href="endscreen.css">
+    <link rel="stylesheet" href="profil.css">
 
     <script src="script.js"></script>
 
@@ -16,19 +17,62 @@
 
 <header>
   <h1>QuizReise</h1>
+
+  <div class="profil-header-container">
+
+    <div class="progress-bar-header">
+      <div id="progressBarHeader" class="progress-bar-background-color-header" style="width: 0%;">
+        <p>0%</p>
+      </div>
+     </div>
+
+    <div class="profil-info-header">
+     <p>Adrian</p>
+     <p><b>Level </b><b id="levelHeader">1</b></p>
+    </div>
+    <img id="badgeHeader" src="./badge/level-1.png">
+   </div>
 </header>
 
-<div class="display-flex">
+<section class="profil-mobil-section">
+  <div class="profil-mobil-container">
 
+    <div class="progress-bar-mobil">
+      <div id="progressBarMobil" class="progress-bar-background-color-mobil" style="width: 0%;">
+        <p>0%</p>
+      </div>
+     </div>
+
+    <div class="profil-info-mobil">
+     <p>Adrian</p>
+     <p><b>Level </b><b id="levelMobil">1</b></p>
+    </div>
+   </div>
+</section>
+
+<div class="display-flex">
 <main>
 
 <section class="menu-section">
-  <a href="#">Link</a>
-  <a href="#">Link</a>
-  <a href="#">Link</a>
-  <a href="#">Link</a>
-  <a href="#">Link</a>
-  <a href="#">Link</a>
+
+  <div class="profil-container">
+   <img id="badge" src="./badge/level-1.png">
+   <div class="profil-info">
+    <p class="profil-name">Adrian</p>
+    <p><b>Level </b><b id="level">1</b></p>
+   </div>
+   <div class="progress-bar">
+    <div id="progressBar" class="progress-bar-background-color" style="width: 0%;">
+      <p>0%</p>
+    </div>
+   </div>
+  </div>
+
+  <a href="#">Quiz Level 1</a>
+  <a href="#">Quiz Level 2</a>
+  <a href="#">Quiz Level 3</a>
+  <a href="#">Quiz Level 4</a>
+  <a href="#">Quiz Level 5</a>
 </section>
 
 <section class="quiz-section">
@@ -54,7 +98,6 @@
 
 </div>
 
-
 <div class="endScreen d-none" id="endScreen">
   <div>
     <h3>Du hast es geschaff Adrian Perfekt</h3>
@@ -67,7 +110,6 @@
 </section>
 
 </main>
-
 </div>
 
 </body>

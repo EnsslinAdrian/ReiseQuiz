@@ -93,6 +93,8 @@ let questions = [
 
 let currentQuestion = 0;
 let correctAnswersCurrent = 0;
+let correctAnswersForLevel = 0;
+let level = 1;
 
 function initQuiz() {
   document.getElementById('questionLength').innerHTML = questions.length;
@@ -119,6 +121,8 @@ function answer(selction) {
   if (question['right_answer'] == answer) {
     document.getElementById(selction).classList.add('background-color-correct');
     correctAnswersCurrent++;
+    correctAnswersForLevel++;
+    progressBar();
   } else {
     document.getElementById(selction).classList.add('background-color-wrong');
     document.getElementById(idOfRightAnswer).classList.add('background-color-correct');
@@ -133,6 +137,7 @@ function nextQuestion() {
   currentQuestion++
   initQuiz();
   resetQuestionColor();
+
 }
 }
 
@@ -159,6 +164,43 @@ if (correctAnswersCurrent < 5) {
 } else if (correctAnswersCurrent === 10) {
   document.getElementById('showEndScreenText').innerHTML = 'Herzlichen Glückwunsch du hast alle Fragen richtig beantwortet du bist ein Naturtalent weiter so';
 }
+
+}
+
+function progressBar() {
+  let percent = correctAnswersForLevel / 5; 
+  percent = Math.round(percent * 100); 
+
+  document.getElementById('progressBar').innerHTML = `${percent}%`;
+  document.getElementById('progressBar').style.width = `${percent}%`;
+
+  document.getElementById('progressBarHeader').innerHTML = `${percent}%`;
+  document.getElementById('progressBarHeader').style.width = `${percent}%`;
+
+  document.getElementById('progressBarMobil').innerHTML = `${percent}%`;
+  document.getElementById('progressBarMobil').style.width = `${percent}%`;
+
+
+  if (percent >= 100) { 
+      level++; 
+      document.getElementById('level').innerHTML = level;
+      document.getElementById('levelHeader').innerHTML = level;
+      document.getElementById('levelMobil').innerHTML = level;
+
+      correctAnswersForLevel = 0; 
+
+      document.getElementById('progressBar').style.width = `0%`; 
+      document.getElementById('progressBar').innerHTML = `0%`; 
+
+      document.getElementById('progressBarHeader').style.width = `0%`; 
+      document.getElementById('progressBarHeader').innerHTML = `0%`; 
+
+      document.getElementById('progressBarMobil').style.width = `0%`; 
+      document.getElementById('progressBarMobil').innerHTML = `0%`; 
+
+      document.getElementById('badge').src = `./badge/level-${level}.png`;
+      document.getElementById('badgeHeader').src = `./badge/level-${level}.png`;
+  }
 
 }
 
